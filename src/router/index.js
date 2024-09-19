@@ -4,19 +4,17 @@ import Home from '../components/HelloWorld.vue';
 import note from '/src/pages/note.vue'
 import registerForm from '/src/pages/registerForm.vue'
 import changecolor from '/src/pages/changeColor.vue'
-import parentspage from '/src/pages/parents.vue'
-import childpage from '/src/pages/child.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/portfolio/vue/',
     name: 'Home',
     meta: { showInMenu: true },
     component: Home
   },
 
   {
-    path: '/note', component: note, name: 'noteDemo',
+    path: '/portfolio/vue/note', component: note, name: 'noteDemo',
     meta: { showInMenu: true },
     children: [
       {
@@ -36,37 +34,25 @@ const routes = [
     ]
   },
   {
-    path: '/RegisterForm',
+    path: '/portfolio/vue/RegisterForm',
     name: 'Register',
     meta: { showInMenu: true },
     component: registerForm
   },
   {
-    path: '/color',
+    path: '/portfolio/vue/color',
     name: 'changeColor',
     meta: { showInMenu: true },
     component: changecolor
   },
   {
-    path: '/parents',
-    name: '父元件',
-    meta: { showInMenu: true },
-    component: parentspage
-  },
-  {
-    path: '/child',
-    name: 'child',
-    meta: { showInMenu: true },
-    component: childpage
-  },
-  {
-    path: '/pinia',
+    path: '/portfolio/vue/pinia',
     name: 'Pinia狀態管理',
     meta: { showInMenu: true },
     component: () => import('../pages/PiniaStore.vue')
   },
   {
-    path: '/axiosdemo',
+    path: '/portfolio/vue/axiosdemo',
     name: 'AxiosDemo',
     meta: { showInMenu: true }, 
     component: () => import('../pages/AxiosDemo.vue')

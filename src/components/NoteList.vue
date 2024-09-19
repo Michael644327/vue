@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { noteStore } from '../stores/noteStore'
 import { storeToRefs } from 'pinia';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const todoStore = noteStore()
 const { finishedTodos } = storeToRefs(todoStore)
@@ -12,7 +13,7 @@ const { deleteTodo } = todoStore
 <template>
     <RouterLink to="/note/add"><button class="mb-3">新增待辦事項</button></RouterLink>
     <h4>
-        <i class="fa-solid fa-ghost"></i>
+        <font-awesome-icon :icon="['fas', 'ghost']" />
     </h4>
     <table>
         <tbody>
@@ -20,7 +21,7 @@ const { deleteTodo } = todoStore
                 <td class="listname">
                     <h4>待辦事項</h4>
                 </td>
-                <td><i class="fa-solid fa-thumbtack"></i></td>
+                <td><font-awesome-icon :icon="['fas', 'thumbtack']" /></td>
                 <td></td>
             </tr>
             <tr v-for="item in todoStore.todos" :key="item.id" class="listitem">
@@ -28,7 +29,7 @@ const { deleteTodo } = todoStore
                     item.title }}</RouterLink></td>
                 <td><input class="form-check-input" type="checkbox" value="" v-model="item.pined" :id="item.id">
                 </td>
-                <td><button @click="deleteTodo(item.id)"><i class="fa-solid fa-trash-can"></i></button></td>
+                <td><button @click="deleteTodo(item.id)"><font-awesome-icon :icon="['fas', 'trash-can']" /></button></td>
             </tr>
         </tbody>
     </table>
@@ -45,7 +46,7 @@ const { deleteTodo } = todoStore
             </tr>
             <tr v-for="finish_item in finishedTodos" :key="finish_item.id" class="listitem">
                 <td class="listname">{{ finish_item.title }}</td>
-                <td><button><i class="fa-solid fa-trash-can"></i></button></td>
+                <td><button><font-awesome-icon :icon="['fas', 'trash-can']" /></button></td>
             </tr>
         </tbody>
     </table>
