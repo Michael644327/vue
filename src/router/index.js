@@ -5,6 +5,13 @@ import note from '/src/pages/note.vue'
 import registerForm from '/src/pages/registerForm.vue'
 import changecolor from '/src/pages/changeColor.vue'
 
+
+const router = createRouter({
+  mode: 'hash', //使用hash模式，在github pages上達到直連效果
+  history: createWebHistory(),
+  routes
+});
+
 const routes = [
   {
     path: '/portfolio/vue/',
@@ -59,9 +66,5 @@ const routes = [
   },
 ];
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes
-});
 
 export default router;
