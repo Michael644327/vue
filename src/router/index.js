@@ -1,20 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import App from '../App.vue'; // 假設有一個 Home.vue 頁面
 import Home from '../components/HelloWorld.vue';
 import note from '/src/pages/note.vue'
 import registerForm from '/src/pages/registerForm.vue'
 import changecolor from '/src/pages/changeColor.vue'
 
-
-const router = createRouter({
-  mode: 'hash', //使用hash模式，在github pages上達到直連效果
-  history: createWebHistory(),
-  routes
-});
-
 const routes = [
   {
-    path: '/vue/',
+    path: '/vue',
     name: 'Home',
     meta: { showInMenu: true },
     component: Home
@@ -66,5 +58,11 @@ const routes = [
   },
 ];
 
+
+const router = createRouter({
+  mode: 'hash', //使用hash模式，在github pages上達到直連效果
+  history: createWebHistory(),
+  routes
+});
 
 export default router;
