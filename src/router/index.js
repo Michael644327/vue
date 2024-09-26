@@ -14,18 +14,18 @@ const router = createRouter({
 
 const routes = [
   {
-    path: '/portfolio/vue/',
+    path: '/vue/',
     name: 'Home',
     meta: { showInMenu: true },
     component: Home
   },
 
   {
-    path: '/portfolio/vue/note', component: note, name: 'noteDemo',
+    path: '/vue/note', component: note, name: 'note',
     meta: { showInMenu: true },
     children: [
       {
-        path: '', name: 'noteDemo',
+        path: '', name: 'note',
         component: () => import('/src/components/NoteField.vue'),
       },
       {
@@ -41,26 +41,26 @@ const routes = [
     ]
   },
   {
-    path: '/portfolio/vue/RegisterForm',
-    name: 'Register',
+    path: '/vue/registerForm',
+    name: '表單練習',
     meta: { showInMenu: true },
     component: registerForm
   },
   {
-    path: '/portfolio/vue/color',
-    name: 'changeColor',
+    path: '/vue/color',
+    name: '輸入偵測練習',
     meta: { showInMenu: true },
     component: changecolor
   },
   {
-    path: '/portfolio/vue/pinia',
+    path: '/vue/pinia',
     name: 'Pinia狀態管理',
     meta: { showInMenu: true },
     component: () => import('../pages/PiniaStore.vue')
   },
   {
-    path: '/portfolio/vue/axiosdemo',
-    name: 'AxiosDemo',
+    path: '/vue/axios',
+    name: 'Axios練習',
     meta: { showInMenu: true }, 
     component: () => import('../pages/AxiosDemo.vue')
   },
