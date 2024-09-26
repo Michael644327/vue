@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../components/HelloWorld.vue';
-import note from '/src/pages/note.vue'
-import registerForm from '/src/pages/registerForm.vue'
-import changecolor from '/src/pages/changeColor.vue'
+import note from '../pages/note.vue'
+import registerForm from '../pages/registerForm.vue'
+import changecolor from '../pages/changeColor.vue'
 
 const routes = [
   {
@@ -57,8 +57,6 @@ const routes = [
     component: () => import('../pages/AxiosDemo.vue')
   },
 ];
-
-
 const router = createRouter({
   mode: 'hash', //使用hash模式，在github pages上達到直連效果
   history: createWebHistory(),

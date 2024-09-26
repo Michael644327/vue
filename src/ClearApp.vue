@@ -1,10 +1,14 @@
 <script setup>
 import TopBar from './components/topBar.vue'
+import Footer from './components/footer.vue';
 </script>
 
 <template>
+  <div class="maincontainer">
   <TopBar />
   <router-view />
+  <Footer />
+</div>
 </template>
 
 <style scoped>
@@ -27,6 +31,12 @@ import TopBar from './components/topBar.vue'
 .container{
   max-width:100%;
   padding:0;
+}
+
+.maincontainer{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 讓頁面高度至少等於視窗高度 */
 }
 
 
